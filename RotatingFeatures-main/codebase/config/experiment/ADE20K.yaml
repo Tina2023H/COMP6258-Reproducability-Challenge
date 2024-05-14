@@ -1,25 +1,22 @@
 # @package _global_
 
 input:
-  dataset: 1
+  dataset: 3
+  load_path: datasets/ADE20K2017
 
-  load_path: datasets/FoodSeg103/Images/
-
-  num_objects_per_img: 4
+  num_objects_per_img: 4 
 
   image_size: [ 14, 14 ]  # Shape corresponds to output feature map size of DINO model.
-  channel: 768
+  channel: 768 
 
   dino_processed: True
 
-  random_rotation: True  # If true, randomly rotate images by 90 degrees to the left and right.
-
 
 model:
-  hidden_dim: 128  # Base channel dimension of convolutional layers.
+  hidden_dim: 128   # Base channel dimension of convolutional layers.
   linear_dim: 256  # Feature dimension of linear layer.
 
-  rotation_dimensions: 10
+  rotation_dimensions: 10  
 
 
 training:
