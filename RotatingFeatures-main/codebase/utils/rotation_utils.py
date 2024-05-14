@@ -69,7 +69,7 @@ def run_evaluation(
     else:
         pred_labels = eval_utils.apply_dbscan(
         opt, norm_rotating_output, labels["pixelwise_instance_labels"]
-    )
+      )
     # Compare predicted cluster labels with ground-truth labels.
     return eval_utils.run_object_discovery_evaluation(opt, pred_labels, labels)
 
