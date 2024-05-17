@@ -9,13 +9,14 @@ To reproduce these experiments, then you need to
 
 * Please add files under folder "ADE20K2017" and "MNISTShape" to the path "RotatingFeatures-main/datasets". 
 * Please add files "ADE20KDataset.py" and "MNISTShape.py" to the path "RotatingFeatures-main/codebase/data". 
-* Please add config files "ADE20K.yaml" , "MNISTShape.yaml" to the path "RotatingFeatures-main/codebase/config/experiment". 
+* Please add config files "ADE20K.yaml" , "MNISTShape.yaml" to the path "RotatingFeatures-main/codebase/config/experiment".
+* replace "data_utils.py" to the same file under the folder "RotatingFeatures-main/codebase/utils"
 * To use ADE20K, use "python -m codebase.main +experiment=ADE20K". 
 * To use MNISTShape, use "python -m codebase.main +experiment=MNISTShape".
 
 # Different cluster
 
-* 1 please replace the files"eval_utils.py" and "rotation_utils.py" under folder"Different cluster" to the same filed under this folder "RotatingFeatures-main/codebase/utils". 
+* 1 please replace the files"eval_utils.py" and "rotation_utils.py" under folder"Different cluster" to the same files under this folder "RotatingFeatures-main/codebase/utils". 
 * 2 replace the file "4Shapes.yaml" to the same file under the  folder "RotatingFeatures-main/codebase/". 
 * 3 run the code,  use "python -m codebase.main +experiment=4Shapes" 
 
