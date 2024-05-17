@@ -7,7 +7,7 @@ from einops import rearrange
 from omegaconf import DictConfig
 from sklearn.cluster import KMeans
 from sklearn.metrics.cluster import adjusted_rand_score
-from sklearn.cluster import DBSCAN
+
 from codebase.utils import utils
 
 
@@ -252,44 +252,3 @@ def resize_pred_labels(
             )
 
     return resized_pred_labels
-
-
-def apply_dbscan(
-    opt: DictConfig, norm_rotating_output: torch.Tensor, gt_labels: torch.Tensor
-) -> np.ndarray:
-    norm_rotating_output = rearrange(
-        norm_rotating_output.detach().cpu().numpy(), "b n c h w -> b h w (c n)"
-    )
-    pred_labels = np.zeros(
-        (opt.input.batch_size, opt.input.image_size[0], opt.input.image_size[1])
-    )
-    num_clusters = opt.input.num_objects_per_img + 1
-    # Run  on each image separately.
-    for img_idx in range(opt.input.batch_size):
-        norm_rotating_output_img = norm_rotating_output[img_idx]
-
-        if opt.evaluation.mask_overlap == 1:
-            # Remove overlap areas before applying .
-            label_idx = np.where(gt_labels[img_idx] != -1)
-            norm_rotating_output_img = norm_rotating_output_img[label_idx]
-        else:
-            norm_rotating_output_img = rearrange(
-                norm_rotating_output_img, "h w c -> (h w) c"
-            )
-        dbscan = DBSCAN(eps=0.5, min_samples = 4)  
-        dbscan_label = dbscan.fit_predict(norm_rotating_output_img)
-        if opt.evaluation.mask_overlap == 1:
-            # Create result image: fill in with predicted labels & assign "none" label to overlap areas.
-            cluster_img = np.zeros(opt.input.image_size) + num_clusters
-            cluster_img[label_idx] = dbscan_label
-        else:
-            cluster_img = rearrange(
-                dbscan_label,
-                "(h w) -> h w",
-                h=opt.input.image_size[0],
-                w=opt.input.image_size[1],
-            )
-
-        pred_labels[img_idx] = cluster_img
-
-    return pred_labels
