@@ -27,4 +27,3 @@ training:
 
 evaluation:
   mask_overlap: 1  # If 1: Mask overlapping object areas while clustering orientations.
-  bKeans: 1

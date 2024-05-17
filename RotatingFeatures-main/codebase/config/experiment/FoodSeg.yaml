@@ -30,4 +30,3 @@ training:
 evaluation:
   mask_overlap: 0  # If 1: Mask overlapping object areas while clustering orientations.
   smooth_labels: True  # Smooth out predicted labels when resized.
-  bKeans: 1
