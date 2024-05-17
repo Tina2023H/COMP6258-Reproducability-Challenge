@@ -59,12 +59,17 @@ def run_evaluation(
     """
     # Map rotating features onto unit-hypersphere, while masking features with small magnitudes.
     norm_rotating_output = norm_and_mask_rotating_output(opt, rotation_output)
+    
+    if opt.evaluation.bKeans:
 
     # Cluster rotating features according to their orientation.
-    pred_labels = eval_utils.apply_kmeans(
-        opt, norm_rotating_output, labels["pixelwise_instance_labels"],
-    )
-
+       pred_labels = eval_utils.apply_kmeans(
+         opt, norm_rotating_output, labels["pixelwise_instance_labels"],
+      )
+    else:
+        pred_labels = eval_utils.apply_dbscan(
+        opt, norm_rotating_output, labels["pixelwise_instance_labels"]
+      )
     # Compare predicted cluster labels with ground-truth labels.
     return eval_utils.run_object_discovery_evaluation(opt, pred_labels, labels)
 
