@@ -18,3 +18,8 @@ Different cluster
  1 please replace the files"eval_utils.py" and "rotation_utils.py" under folder"Different cluster" to the same filed under this folder "RotatingFeatures-main/codebase/utils".
  2 replace the file "4Shapes.yaml" to the same file under the  folder "RotatingFeatures-main/codebase/".
  3 run the code,  use "python -m codebase.main +experiment=4Shapes"
+
+
+To run “Different Optimisers” experiment, copy the "model_utils.py" file in the "Different optimiser" folder into "RotatingFeatures-main/codebase/utils" path and replace it with the existing file.
+
+To run "Testing Robusteness" experiment, copy the "ShapesDataset.py" file in the "Testing Robusteness" folder into "RotatingFeatures-main/codebase/data" path and replace it with the existing file.
