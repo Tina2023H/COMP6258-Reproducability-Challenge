@@ -29,6 +29,6 @@ To run "Testing Robusteness" experiment, copy the "ShapesDataset.py" file in the
 
 Different Model Architecture
 
-To run experiments with different model architectures, replace the file	RotatingFeatures-main/codebase/model/RotatingAutoEncoder.py with Different_architecture/Rotating_AutoEncoder.py
+To run experiments with different model architectures, replace the file	RotatingFeatures-main/codebase/model/RotatingAutoEncoder.py with Different_architecture/RotatingAutoEncoder.py
 
 To experiment with adding dropout in encode replace the RotatingFeatures-main/codebase/model/ConvEncoder.py with Different_architecture/ConvEncoder.py
