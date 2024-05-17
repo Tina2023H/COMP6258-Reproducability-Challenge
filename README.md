@@ -26,3 +26,9 @@ To run “Different Optimisers” experiment, copy the "model_utils.py" file in 
 Test Robustness
 
 To run "Testing Robusteness" experiment, copy the "ShapesDataset.py" file in the "Testing Robusteness" folder into "RotatingFeatures-main/codebase/data" path and replace it with the existing file.
+
+Different Model Architecture
+
+To run experiments with different model architectures, replace the file	RotatingFeatures-main/codebase/model/RotatingAutoEncoder.py with Different_architecture/Rotating_AutoEncoder.py
+
+To experiment with adding dropout in encode replace the RotatingFeatures-main/codebase/model/ConvEncoder.py with Different_architecture/ConvEncoder.py
