@@ -5,7 +5,7 @@ import torch
 from omegaconf import DictConfig
 from torch.utils.data import DataLoader, Dataset
 
-from codebase.data import ShapesDataset, FoodSeg, PascalDataset,ADE20KDataset, KITTIDataset, MNISTShape
+from codebase.data import ShapesDataset, FoodSeg, PascalDataset
 
 
 def load_dataset(opt: DictConfig, partition: str) -> Dataset:
@@ -25,12 +25,6 @@ def load_dataset(opt: DictConfig, partition: str) -> Dataset:
         dataset = FoodSeg.FoodSeg(opt, partition)
     elif opt.input.dataset == 2:
         dataset = PascalDataset.PascalDataset(opt, partition)
-    elif opt.input.dataset == 3:
-        dataset = ADE20KDataset.ADE20KDataset(opt, partition)
-    elif opt.input.dataset == 4:
-        dataset = KITTIDataset.KITTI(opt, partition)
-    elif opt.input.dataset == 5:
-        dataset = MNISTShape.MNISTShapesDataset(opt, partition) 
     else:
         raise NotImplementedError("Dataset not implemented.")
     return dataset
