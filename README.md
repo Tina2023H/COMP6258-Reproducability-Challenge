@@ -16,9 +16,9 @@ To reproduce these experiments, then you need to
 
 # Different cluster
 
-* 1 please replace the files"eval_utils.py" and "rotation_utils.py" under folder"Different cluster" to the same files under this folder "RotatingFeatures-main/codebase/utils". 
-* 2 replace the file "4Shapes.yaml" to the same file under the  folder "RotatingFeatures-main/codebase/". 
-* 3 run the code,  use "python -m codebase.main +experiment=4Shapes" 
+* Please replace the files"eval_utils.py" and "rotation_utils.py" under folder"Different cluster" to the same files under this folder "RotatingFeatures-main/codebase/utils". 
+* Replace the file "4Shapes.yaml" to the same file under the  folder "RotatingFeatures-main/codebase/". 
+* Run the code,  use "python -m codebase.main +experiment=4Shapes" 
 
 # Different Optimisers
 
@@ -27,7 +27,8 @@ To reproduce these experiments, then you need to
 
 # Test Robustness
 
-To run "Testing Robusteness" experiment, copy the "ShapesDataset.py" file in the "Testing Robusteness" folder into "RotatingFeatures-main/codebase/data" path and replace it with the existing file.
+* To run "Testing Robusteness" experiment, copy the "ShapesDataset.py" file in the "Testing Robusteness" folder into "RotatingFeatures-main/codebase/data" path and replace it with the existing file.
+* Then uncomment lines 54 to 58 to run a for Loop for label flipping attack.
 
 # Different Model Architecture
 
