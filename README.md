@@ -22,7 +22,8 @@ To reproduce these experiments, then you need to
 
 # Different Optimisers
 
-To run “Different Optimisers” experiment, copy the "model_utils.py" file in the "Different optimiser" folder into "RotatingFeatures-main/codebase/utils" path and replace it with the existing file.
+* To run “Different Optimisers” experiment, copy the "model_utils.py" file in the "Different optimiser" folder into "RotatingFeatures-main/codebase/utils" path and replace it with the existing file.
+* Then uncomment lines 11 to 69 to run Adam optimiser, lines 72 to 143 to run SGD optimiser, and lines 145 to 182 to run Adadelta optimiser.
 
 # Test Robustness
 
